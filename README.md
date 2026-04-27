@@ -1,4 +1,4 @@
-# Progetto per una pagina in HTML/CSS/JS Plain per un ipotetico cliente X che si occupa di Idraulica
+# Progetto per una pagina in HTML/CSS/JS Plain per un cliente che si occupa di Idraulica
 
 La pagina è sviluppata con lo scopo di proporre al cliente una soluzione reale per pubblicizzarsi, proponendo un layout responsive e dinamico, completamente personalizzabile in base alle esigenze, commentato in maniera chiara e cristallina in ogni singolo aspetto dello stesso. 
 Il progetto è fornito con un form di contatto anchesso personalizzabile. Non avendo accesso ad una backend ho optato per una soluzione online che gestice il form, anchessa completamente personalizzabile.
