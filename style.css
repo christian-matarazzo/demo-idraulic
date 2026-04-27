@@ -1,0 +1,161 @@
+/* ==================================================
+   STYLE.CSS
+   Foglio stile principale del sito
+   - Reset base
+   - Layout responsive
+   - Componenti UI
+   - Dark mode
+   ================================================== */
+
+/* Variabili colore e spaziature modificabili rapidamente */
+:root{
+  --blue:#0b5ed7;
+  --blue-2:#2563eb;
+  --dark:#111827;
+  --text:#1f2937;
+  --muted:#6b7280;
+  --line:#e5e7eb;
+  --bg:#ffffff;
+  --bg-soft:#f8fafc;
+  --radius:18px;
+  --shadow:0 12px 40px rgba(15,23,42,.08);
+}
+
+/* Reset essenziale */
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Inter,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  line-height:1.6;
+}
+img{max-width:100%;display:block;height:auto}
+a{text-decoration:none;color:inherit}
+
+/* Utility class */
+.container{width:min(1120px,92%);margin:auto}
+.section{padding:72px 0}
+.grid{display:grid;gap:20px}
+.muted{color:var(--muted)}
+
+/* Navbar sticky */
+.nav{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
+.logo{font-weight:800}
+.menu{display:flex;gap:16px;flex-wrap:wrap}
+.menu a{color:var(--muted)}
+.menu a:hover{color:var(--text)}
+
+/* Bottoni */
+.btn,.fab{
+  border:none;
+  cursor:pointer;
+  border-radius:999px;
+}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
+  font-weight:700;
+  color:#fff;
+  background:linear-gradient(135deg,var(--blue),var(--blue-2));
+  transition:.2s ease;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-alt{
+  background:#fff;
+  color:var(--text);
+  border:1px solid var(--line);
+}
+
+/* Hero */
+.hero{
+  background:radial-gradient(circle at top right,#dbeafe,transparent 30%),linear-gradient(180deg,#f8fbff,#fff);
+  padding:40px 0 72px;
+}
+.hero-wrap{display:grid;gap:28px;align-items:center}
+.hero h1{font-size:clamp(2.3rem,6vw,4.2rem);line-height:1.02;margin:.2em 0}
+.hero-media img{border-radius:24px;box-shadow:var(--shadow);object-fit:cover}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap}
+
+/* Card */
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+
+/* Sezione alternativa */
+.alt-bg{background:var(--bg-soft)}
+
+/* Form */
+.form{max-width:700px}
+.form label{display:block;font-weight:700;margin:0 0 6px}
+.form input,.form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:14px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  font:inherit;
+}
+.form textarea{min-height:140px;resize:vertical}
+.form input:focus,.form textarea:focus{outline:2px solid rgba(37,99,235,.25)}
+
+/* Carosello recensioni */
+.carousel{overflow:hidden}
+.track{display:flex;transition:transform .6s ease}
+.slide{min-width:100%}
+
+/* Floating actions */
+.fab-wrap{position:fixed;right:16px;bottom:16px;display:grid;gap:10px;z-index:120}
+.fab{
+  width:56px;
+  height:56px;
+  display:grid;
+  place-items:center;
+  color:#fff;
+  box-shadow:var(--shadow);
+}
+.wa{background:#25D366}
+.call{background:var(--blue)}
+.theme-toggle{background:#111827}
+
+/* Footer */
+footer{padding:32px 0;background:#0f172a;color:#fff}
+
+/* Responsive desktop */
+@media (min-width:768px){
+  .hero-wrap{grid-template-columns:1.1fr .9fr}
+  .benefits{grid-template-columns:repeat(3,1fr)}
+}
+
+/* ==========================
+   DARK MODE
+   Attivato con classe .dark su <html>
+   ========================== */
+.dark body,
+.dark .alt-bg,
+.dark section,
+.dark main{background:#020617;color:#e5e7eb}
+.dark .nav,
+.dark .card,
+.dark .form input,
+.dark .form textarea{background:#0f172a;color:#e5e7eb;border-color:#1e293b}
+.dark .menu a,
+.dark .muted{color:#cbd5e1}
+.dark .btn-alt{background:#111827;color:#fff;border-color:#334155}
+.dark .hero{background:radial-gradient(circle at top right,#1e3a8a,transparent 30%),linear-gradient(180deg,#020617,#0f172a)}
+.dark footer{background:#020617;border-top:1px solid #1e293b}
